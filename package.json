@@ -10,11 +10,13 @@
 		"start": "node ."
 	},
 	"dependencies": {
+		"async": "^3.2.3",
 		"axios": "^0.24.0",
 		"chalk": "^4.0.0",
 		"dotenv": "^10.0.0",
 		"eosjs": "^22.1.0",
 		"lodash": "^4.17.21",
+		"mz": "^2.7.0",
 		"node-fetch": "^2.0.0"
 	},
 	"devDependencies": {
