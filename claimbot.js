@@ -184,7 +184,6 @@ async function fetchAssetData(asset_id, index = 0) {
 
 		return response.data.data;
 	} catch (error) {
-		console.log(error.message);
 		return await fetchAssetData(asset_id, index + 1);
 	}
 }
@@ -223,7 +222,6 @@ async function mine(account, privKey) {
 		accountInfo.last_mine + land.data.delay + tools.reduce((agg, t) => agg + parseFloat(t.data.delay), 0);
 	const nextClaim = new Date(nextAvailability * 1e3);
 
-	console.log(account, { nextAvailability, nextClaim });
 	if (Date.now() <= nextClaim.getTime()) {
 		console.log(
 			`${yellow("Warning")}`,
