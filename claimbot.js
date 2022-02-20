@@ -221,6 +221,7 @@ async function mine(account, privKey) {
 	const nextAvailability =
 		accountInfo.last_mine + land.data.delay + tools.reduce((agg, t) => agg + parseFloat(t.data.delay), 0);
 	const nextClaim = new Date(nextAvailability * 1e3);
+	nextClaim.setUTCDate(nextClaim.getUTCDate() - 1);
 
 	if (Date.now() <= nextClaim.getTime()) {
 		console.log(
